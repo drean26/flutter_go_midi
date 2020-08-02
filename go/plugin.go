@@ -10,7 +10,7 @@ import (
 )
 
 const channelName = "flutter_go_midi"
-const wr
+var wr *writer.Writer
 
 // FlutterGoMidiPlugin implements flutter.Plugin and handles method.
 type FlutterGoMidiPlugin struct{}
@@ -35,7 +35,7 @@ func (p *FlutterGoMidiPlugin) handleInit(arguments interface{}) (reply interface
 	outs, err := drv.Outs()
 	out := outs[0]
 	out.Open()
-	wr := writer.New(out)
+	wr = writer.New(out)
 	return true, nil
 }
 

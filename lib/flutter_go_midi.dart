@@ -18,6 +18,11 @@ class FlutterGoMidi {
     return version;
   }
 
+    static Future<String> init() async {
+    final String version = await _channel.invokeMethod('init');
+    return version;
+  }
+
   static Future<String> noteOn(int number) async {
     final String version = await _channel.invokeMethod('noteOn', {
       'number': number,

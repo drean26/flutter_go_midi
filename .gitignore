@@ -4,6 +4,6 @@
 .packages
 .pub/
 .idea/
-.go1/
+go1/
 
 build/
